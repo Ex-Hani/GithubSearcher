@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GithubSearcher</string>
+    <string name="request">Введите запрос</string>
+</resources>
