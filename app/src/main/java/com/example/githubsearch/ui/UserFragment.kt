@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.githubsearch.R
-import com.example.githubsearch.databinding.FragmentUserFragmentBinding
+import com.example.githubsearch.databinding.FragmentUserBinding
 import com.example.githubsearch.presentation.UserPresenter
 import com.example.githubsearch.presentation.UserView
 import moxy.MvpAppCompatFragment
@@ -15,7 +15,7 @@ import moxy.MvpAppCompatFragment
 class UserFragment : MvpAppCompatFragment(), UserView {
     lateinit var adapter: SearchAdapter
     lateinit var presenter: UserPresenter
-    lateinit var binding: FragmentUserFragmentBinding
+    lateinit var binding: FragmentUserBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +31,7 @@ class UserFragment : MvpAppCompatFragment(), UserView {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = SearchAdapter(onTaskClick = { users, position ->
+        adapter = SearchAdapter(onUserClick = { users, position ->
 
         })
 

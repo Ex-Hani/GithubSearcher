@@ -12,7 +12,9 @@ class SearchAdapter(
     val onUserClick: ((users: MutableList<UserData>, position: Int) -> Unit?)? = null
 ) : RecyclerView.Adapter<SearchHolder>() {
 
+
     lateinit var binding: RecyclerviewItemBinding
+    val isUserData: Boolean = true
 
     var users: MutableList<UserData> = mutableListOf(
         UserData("Lalalala"),
@@ -30,7 +32,7 @@ class SearchAdapter(
     )
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchHolder {
-        val v = if (request) {
+        val v = if (viewType == 1) {
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.fragment_user, parent, false)
         } else {
